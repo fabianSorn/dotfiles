@@ -2,4 +2,5 @@
 " It is only for installing extra bundles, not for configuration
 
 " Theme supporting light and dark color scheme
-Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-one'
+Plug 'ryanoasis/vim-devicons'

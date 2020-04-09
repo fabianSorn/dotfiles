@@ -7,8 +7,8 @@
 
 " Text formatting
 set colorcolumn=80
-set wrap
-set textwidth=80
+" set wrap
+" set textwidth=80
 
 " Code folding
 set foldmethod=indent
@@ -16,6 +16,8 @@ set nofoldenable
 
 " Turn on spell checking
 set spell spelllang=en_us
+let g:airline_powerline_fonts=1
+set encoding=UTF-8
 
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "                               Key Mapping
@@ -40,14 +42,13 @@ set termguicolors
 
 " Automatically activate the light version of the theme during the day and the
 " dark version during the night
+
+colorscheme one
+let g:airline_theme='one'
+
 let hr = (strftime('%H'))
 if hr >= 8 && hr < 18
-    let ayucolor="light"
+    set background=light
 else
-    " A bit lighter alternative to the dark one
-    " let ayucolor="mirage"
-    let ayucolor="dark"
+    set background=dark
 endif
-
-colorscheme ayu
-
