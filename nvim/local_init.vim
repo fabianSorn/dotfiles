@@ -7,8 +7,8 @@
 
 " Text formatting
 set colorcolumn=80
-" set wrap
-" set textwidth=80
+set wrap
+set textwidth=80
 
 " Code folding
 set foldmethod=indent
@@ -19,6 +19,8 @@ set spell spelllang=en_us
 let g:airline_powerline_fonts=1
 set encoding=UTF-8
 
+let g:python_host_prog = '/Users/fsorn/.pyenv/versions/nvim2/bin/python'
+let g:python3_host_prog = '/Users/fsorn/.pyenv/versions/nvim3/bin/python'
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 "                               Key Mapping
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,19 +38,15 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Decrease width of Nerdtree Plugin Window
 let g:NERDTreeWinSize = 38
+set termguicolors     " enable true colors support
 
-" Activate our Theme of choice
-set termguicolors
-
-" Automatically activate the light version of the theme during the day and the
-" dark version during the night
-
-colorscheme one
-let g:airline_theme='one'
-
-let hr = (strftime('%H'))
+let hr = (strftime('%h'))
 if hr >= 8 && hr < 18
-    set background=light
+    " Light Theme    
+    let ayucolor="dark"
 else
-    set background=dark
+    " Dark Theme
+    let ayucolor="light"
 endif
+
+colorscheme ayu
