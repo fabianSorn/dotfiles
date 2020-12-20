@@ -1,11 +1,4 @@
-# dotfiles
+# Just some configuration files
 
-Collection of configuration files.
-
-
-## How to use
-
-To update a local copy of the repository run:
-```bash
-python3 update.py
-```
+Running `setup.sh` will create some symlinks for you, so you won't have to copy
+the configuration files around on your machine.
