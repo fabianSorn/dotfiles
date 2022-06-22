@@ -1,2 +1,2 @@
 require("settings.keybindings")
-require("settings.general")
+require("settings.options")

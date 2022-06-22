@@ -31,6 +31,9 @@ return require('packer').startup(function()
 	requires = "kyazdani42/nvim-web-devicons"
     }
 
+    -- Closing buffers and keeping the window layout intact
+    use 'famiu/bufdelete.nvim'
+
     -- Telescope file finder
     use {
       "nvim-telescope/telescope.nvim",
