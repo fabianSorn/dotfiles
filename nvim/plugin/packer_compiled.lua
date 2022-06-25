@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -112,11 +122,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ripgrep = {
-    loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/ripgrep",
-    url = "https://github.com/BurntSushi/ripgrep"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

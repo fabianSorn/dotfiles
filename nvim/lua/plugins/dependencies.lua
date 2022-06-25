@@ -3,13 +3,24 @@ return require('packer').startup(function()
     -- Packer itself
     use 'wbthomason/packer.nvim'
 
-    -- NVIM-Tree File Explorer
+    -- Neo-Tree File Explorer
     use {
-	'kyazdani42/nvim-tree.lua',
-	requires = {
-	  'kyazdani42/nvim-web-devicons', -- optional, for file icon
-	},
+      "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = { 
+          "nvim-lua/plenary.nvim",
+          "kyazdani42/nvim-web-devicons",
+          "MunifTanjim/nui.nvim",
+        }
     }
+
+    -- Nvim-Tree File Explorer
+    -- use {
+    --   'kyazdani42/nvim-tree.lua',
+    --   requires = {
+    --     'kyazdani42/nvim-web-devicons',
+    --   },
+    -- }
 
     -- Collection of configurations for the built-in LSP client
     use {
