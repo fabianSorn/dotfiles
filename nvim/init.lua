@@ -1,3 +1,3 @@
-require("settings.init")
-require("plugins.init")
-require("lsp.init")
+require("fs.settings.init")
+require("fs.plugins.init")
+require("fs.lsp.init")

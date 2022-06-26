@@ -1,0 +1,13 @@
+vim.opt.backup = false                    -- Do not create any backup files
+vim.opt.clipboard = "unnamedplus"         -- Use system clipboard by default
+vim.opt.expandtab = true                  -- Replace tabs with spaces
+vim.opt.mouse = "a"                       -- Support for mouse interaction
+vim.opt.shiftwidth = 2                    -- Double space as tab
+vim.opt.showmode = false                  -- Do not display mode when switching
+vim.opt.smartcase = true                  -- Smarter capitalization
+vim.opt.smartindent = true                -- Smarter indentation
+vim.opt.termguicolors = true              -- Colors, whoop whoop
+vim.opt.scrolloff = 8                     -- Nicer vertical scrolling
+vim.opt.sidescrolloff = 8                 -- Nicer horizontal scrolling
+vim.opt.undofile = true                   -- Persists undo
+vim.opt.wrap = false                      -- No long line wrapping

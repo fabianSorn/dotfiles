@@ -1,6 +1,0 @@
-require("plugins.bootstrap_packer")
-require("plugins.dependencies")
-require("plugins.configuration.neotree")
--- require("plugins.configuration.nvim-tree")
-require("plugins.configuration.bufferline")
-require("plugins.configuration.telescope")

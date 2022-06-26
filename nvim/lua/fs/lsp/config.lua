@@ -32,7 +32,7 @@ local opts = {
 }
 
 function M.setup()
-  require("lsp.installer").setup(servers, opts)
+  require("fs.lsp.installer").setup(servers, opts)
 end
 
 return M

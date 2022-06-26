@@ -1,7 +1,7 @@
-return require('packer').startup(function()
+return require("packer").startup(function()
 
     -- Packer itself
-    use 'wbthomason/packer.nvim'
+    use "wbthomason/packer.nvim"
 
     -- Neo-Tree File Explorer
     use {
@@ -16,9 +16,9 @@ return require('packer').startup(function()
 
     -- Nvim-Tree File Explorer
     -- use {
-    --   'kyazdani42/nvim-tree.lua',
+    --   "kyazdani42/nvim-tree.lua",
     --   requires = {
-    --     'kyazdani42/nvim-web-devicons',
+    --     "kyazdani42/nvim-web-devicons",
     --   },
     -- }
 
@@ -27,9 +27,6 @@ return require('packer').startup(function()
       "neovim/nvim-lspconfig",
       event = "BufReadPre",
       wants = { "nvim-lsp-installer" },
-      config = function()
-	require("lsp.config").setup()
-      end,
       requires = {
 	"williamboman/nvim-lsp-installer",
       },
@@ -43,7 +40,7 @@ return require('packer').startup(function()
     }
 
     -- Closing buffers and keeping the window layout intact
-    use 'famiu/bufdelete.nvim'
+    use "famiu/bufdelete.nvim"
 
     -- Telescope file finder
     use {
