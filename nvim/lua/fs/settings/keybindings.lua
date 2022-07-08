@@ -26,7 +26,7 @@ vim.keymap.set("n", "<Leader>C", ":Bdelete!<CR>", opts)
 
 -- Finding stuff
 vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<Leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<Leader>ft", "<cmd>Telescope live_grep<cr>", opts)
 vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts)
 vim.keymap.set("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 

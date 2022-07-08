@@ -14,6 +14,17 @@ return require("packer").startup(function()
         }
     }
 
+    -- Colorscheme
+    use {
+      "folke/tokyonight.nvim"
+    }
+
+    -- Nice status line at the bottom
+    use {
+      "nvim-lualine/lualine.nvim",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    }
+
     -- Nvim-Tree File Explorer
     -- use {
     --   "kyazdani42/nvim-tree.lua",
@@ -32,6 +43,11 @@ return require("packer").startup(function()
       },
     }
 
+    -- which key
+    use {
+      "folke/which-key.nvim",
+    }
+
     -- Buffer Line
     use {
 	"akinsho/bufferline.nvim", 
@@ -39,7 +55,8 @@ return require("packer").startup(function()
 	requires = "kyazdani42/nvim-web-devicons"
     }
 
-    -- Closing buffers and keeping the window layout intact
+    -- Closing buffers and keeping the window layout intact, otherwise closing
+    -- buffers kinda sucks
     use "famiu/bufdelete.nvim"
 
     -- Telescope file finder
