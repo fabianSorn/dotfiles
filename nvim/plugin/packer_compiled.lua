@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",

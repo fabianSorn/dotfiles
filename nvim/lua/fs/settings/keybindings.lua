@@ -12,7 +12,7 @@ vim.wo.number = true
 
 -- General
 vim.keymap.set("n", "<Leader>h", ":noh<CR>", opts)
-vim.keymap.set("v", "p", "_dP", opts)
+-- vim.keymap.set("v", "p", "_dP", opts)
 
 -- NeoTree 
 vim.keymap.set("n", "<Leader>e", ":Neotree float toggle=true<CR>", opts)
