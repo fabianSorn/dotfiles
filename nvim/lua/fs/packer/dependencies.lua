@@ -75,4 +75,11 @@ return require("packer").startup(function()
       "nvim-telescope/telescope-fzf-native.nvim", 
       run = "make" 
     }
+
+    -- Tree sitter interface
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
 end)

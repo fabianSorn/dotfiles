@@ -107,6 +107,11 @@ _G.packer_plugins = {
     url = "https://github.com/neovim/nvim-lspconfig",
     wants = { "nvim-lsp-installer" }
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",

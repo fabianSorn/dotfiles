@@ -11,3 +11,5 @@ vim.opt.scrolloff = 8                     -- Nicer vertical scrolling
 vim.opt.sidescrolloff = 8                 -- Nicer horizontal scrolling
 vim.opt.undofile = true                   -- Persists undo
 vim.opt.wrap = false                      -- No long line wrapping
+vim.wo.number = true                      -- Enable absolute line numbers (at currently active line)
+vim.wo.relativenumber = true              -- Enable relative line numbers (at lines around the currently active one)

@@ -4,7 +4,6 @@ local opts = { noremap = true, silent = true }
 -- Setup Space as Leader
 vim.keymap.set("n", "<SPACE>", "<Nop>")
 vim.g.mapleader = " "
-vim.wo.number = true
 
 -- NvimTree 
 -- vim.keymap.set("n", "<Leader>e", ":NvimTreeToggle<CR>")
@@ -26,8 +25,9 @@ vim.keymap.set("n", "<Leader>C", ":Bdelete!<CR>", opts)
 
 -- Finding stuff
 vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<Leader>ft", "<cmd>Telescope live_grep<cr>", opts)
+vim.keymap.set("n", "<Leader>fs", "<cmd>Telescope live_grep<cr>", opts)
 vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts)
+vim.keymap.set("n", "<Leader>ft", "<cmd>Telescope treesitter<cr>", opts)
 vim.keymap.set("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 
 -- Window navigation
