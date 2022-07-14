@@ -57,7 +57,7 @@ return require("packer").startup(function()
 
     -- Closing buffers and keeping the window layout intact, otherwise closing
     -- buffers kinda sucks
-    use "famiu/bufdelete.nvim"
+    use "kazhala/close-buffers.nvim"
 
     -- Telescope file finder
     use {
