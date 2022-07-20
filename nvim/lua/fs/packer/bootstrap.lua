@@ -10,4 +10,3 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     install_path
   })
 end
-
