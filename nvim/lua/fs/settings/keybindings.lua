@@ -1,3 +1,6 @@
+local screen = require("fs.utils.screen")
+local nt = require("neo-tree.command")
+
 -- Options for all keybindings
 local opts = { noremap = true, silent = true }
 
@@ -13,15 +16,19 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>h", ":noh<CR>", opts)
 -- vim.keymap.set("v", "p", "_dP", opts)
 
+function reveal_neotree()
+  nt.execute({ action="show", toggle=true, reveal=true })
+end
+
 -- NeoTree 
-vim.keymap.set("n", "<Leader>e", ":Neotree float toggle=true<CR>", opts)
-vim.keymap.set("n", "<Leader>b", ":Neotree float buffers toggle=true<CR>", opts)
+vim.keymap.set("n", "<Leader>e", function() reveal_neotree() end, opts)
+vim.keymap.set("n", "<Leader>b", ":Neotree reveal buffers float toggle=true<CR>", opts)
 
 -- Buffer navigation
 vim.keymap.set("n", "<S-l>", ":bn<CR>", opts)
 vim.keymap.set("n", "<S-h>", ":bp<CR>", opts)
-vim.keymap.set("n", "<Leader>c", ":Bdelete<CR>", opts)
-vim.keymap.set("n", "<Leader>C", ":Bdelete!<CR>", opts)
+vim.keymap.set("n", "<Leader>c", ":BDelete this<CR>", opts)
+vim.keymap.set("n", "<Leader>C", ":BDelete! this<CR>", opts)
 
 -- Finding stuff
 vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)

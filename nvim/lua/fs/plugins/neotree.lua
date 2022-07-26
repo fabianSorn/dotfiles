@@ -1,6 +1,8 @@
+local screen = require("fs.utils.screen")
+
 require("neo-tree").setup({
   window = {
-    position = "float",
+    position = screen.if_narrow("float", "left"),
     mappings = {
       ["o"] = "open",
     },
