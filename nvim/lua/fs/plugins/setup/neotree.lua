@@ -1,6 +1,7 @@
 local screen = require("fs.utils.screen")
+local nt = require("neo-tree")
 
-require("neo-tree").setup({
+nt.setup({
   window = {
     position = screen.if_narrow("float", "left"),
     mappings = {
@@ -11,3 +12,4 @@ require("neo-tree").setup({
     hijack_netrw_behavior = "open_default",
   },
 })
+

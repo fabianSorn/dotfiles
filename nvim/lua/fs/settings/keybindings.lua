@@ -1,5 +1,4 @@
-local screen = require("fs.utils.screen")
-local nt = require("neo-tree.command")
+local nt = require("fs.plugins.functions.neotree")
 
 -- Options for all keybindings
 local opts = { noremap = true, silent = true }
@@ -8,7 +7,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<SPACE>", "<Nop>")
 vim.g.mapleader = " "
 
--- NvimTree 
+-- NvimTree
 -- vim.keymap.set("n", "<Leader>e", ":NvimTreeToggle<CR>")
 -- vim.keymap.set("n", "R", ":NvimTreeRefresh<CR>")
 
@@ -16,13 +15,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>h", ":noh<CR>", opts)
 -- vim.keymap.set("v", "p", "_dP", opts)
 
-function reveal_neotree()
-  nt.execute({ action="show", toggle=true, reveal=true })
-end
-
--- NeoTree 
-vim.keymap.set("n", "<Leader>e", function() reveal_neotree() end, opts)
-vim.keymap.set("n", "<Leader>b", ":Neotree reveal buffers float toggle=true<CR>", opts)
+-- NeoTree
+vim.keymap.set("n", "<Leader>e", nt.filesystem, opts)
+vim.keymap.set("n", "<Leader>b", nt.buffers, opts)
 
 -- Buffer navigation
 vim.keymap.set("n", "<S-l>", ":bn<CR>", opts)
@@ -53,4 +48,3 @@ vim.keymap.set("n", "∆", ":m-2<CR>", opts)
 -- Better indentation
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
-
