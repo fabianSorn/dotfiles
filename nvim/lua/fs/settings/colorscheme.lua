@@ -1,6 +1,8 @@
-local colorscheme = "tokyonight"
+local os = require("fs.utils.os")
 
-vim.o.background = "light"
+vim.o.background = os.background()
+
+local colorscheme = "tokyonight"
 
 require("fs.utils.cmd").try_cmd(
   "colorscheme " ..colorscheme,
