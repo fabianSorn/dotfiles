@@ -82,6 +82,8 @@ return require("packer").startup(function()
         run = ":TSUpdate"
     }
 
+    use "folke/zen-mode.nvim"
+
     -- completion plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     -- use "hrsh7th/cmp-buffer" -- buffer completions
