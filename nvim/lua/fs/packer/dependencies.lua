@@ -82,7 +82,11 @@ return require("packer").startup(function()
         run = ":TSUpdate"
     }
 
+    -- More focused writing with centered reduced layout
     use "folke/zen-mode.nvim"
+
+    -- Automatic opening and closing brackets
+    use "windwp/nvim-autopairs"
 
     -- completion plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
