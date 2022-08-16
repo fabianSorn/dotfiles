@@ -34,11 +34,15 @@ vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", opts)
 vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", opts)
 
 -- Move around lines
-vim.keymap.set("n", "<A-j>", ":m+1<CR>", opts)
-vim.keymap.set("n", "<A-k>", ":m-2<CR>", opts)
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- macOS specific bindings for alt+<letter> (because those produces some special character)
-vim.keymap.set("n", "º", ":m+1<CR>", opts)
-vim.keymap.set("n", "∆", ":m-2<CR>", opts)
+vim.keymap.set("n", "º", ":m .+1<CR>==", opts)
+vim.keymap.set("n", "∆", ":m .-2<CR>==", opts)
+vim.keymap.set("v", "º", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "∆", ":m '<-2<CR>gv=gv", opts)
 
 -- Better indentation
 vim.keymap.set("v", "<", "<gv", opts)
