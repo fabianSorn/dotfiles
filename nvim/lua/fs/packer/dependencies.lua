@@ -22,16 +22,11 @@ return require("packer").startup(function()
     -- Nice status line at the bottom
     use {
       "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true }
+      requires = { 
+        "kyazdani42/nvim-web-devicons", 
+        opt = true 
+      }
     }
-
-    -- Nvim-Tree File Explorer
-    -- use {
-    --   "kyazdani42/nvim-tree.lua",
-    --   requires = {
-    --     "kyazdani42/nvim-web-devicons",
-    --   },
-    -- }
 
     -- Collection of configurations for the built-in LSP client
     use {
@@ -39,7 +34,7 @@ return require("packer").startup(function()
       event = "BufReadPre",
       wants = { "nvim-lsp-installer" },
       requires = {
-	"williamboman/nvim-lsp-installer",
+        "williamboman/nvim-lsp-installer",
       },
     }
 
@@ -50,9 +45,9 @@ return require("packer").startup(function()
 
     -- Buffer Line
     use {
-	"akinsho/bufferline.nvim", 
-	tag = "v2.*", 
-	requires = "kyazdani42/nvim-web-devicons"
+      "akinsho/bufferline.nvim", 
+      tag = "v2.*", 
+      requires = "kyazdani42/nvim-web-devicons"
     }
 
     -- Closing buffers and keeping the window layout intact, otherwise closing
@@ -63,10 +58,8 @@ return require("packer").startup(function()
     use {
       "nvim-telescope/telescope.nvim",
       requires = { 
-	  {
-	      "nvim-lua/plenary.nvim", 
-	      "BurntSushi/ripgrep"
-	  } 
+        "nvim-lua/plenary.nvim", 
+        "BurntSushi/ripgrep"
       }
     }
 
@@ -78,8 +71,8 @@ return require("packer").startup(function()
 
     -- Tree sitter interface
     use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate"
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate"
     }
 
     -- More focused writing with centered reduced layout

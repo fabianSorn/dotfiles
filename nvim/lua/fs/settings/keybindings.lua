@@ -9,8 +9,8 @@ end
 -- Function to set keybindings from table
 local function resolve(keybindingsTable)
   local opts = { noremap = true, silent = true }
-  for mode, modeBindings in pairs(keybindingsTable) do
-    for _, binding in pairs(modeBindings) do
+  for mode, bindings in pairs(keybindingsTable) do
+    for _, binding in pairs(bindings) do
       for _, trigger in pairs(binding.trigger) do
         vim.keymap.set(mode, trigger, binding.action, opts)
       end
@@ -49,20 +49,21 @@ local pluginBindings = {
     -- closebuffer
     { trigger = { "<Leader>c" }, action = ":BDelete this<CR>" },
     { trigger = { "<Leader>C" }, action = ":BDelete! this<CR>" },
-    -- telescope
+    -- telescope (find ...)
     { trigger = { "<Leader>ff" }, action = "<cmd>Telescope find_files<cr>" },
-    { trigger = { "<Leader>fs" }, action = "<cmd>Telescope live_grep<cr>" },
     { trigger = { "<Leader>fb" }, action = "<cmd>Telescope buffers<cr>" },
+    { trigger = { "<Leader>fs" }, action = "<cmd>Telescope live_grep<cr>" },
     { trigger = { "<Leader>ft" }, action = "<cmd>Telescope treesitter<cr>" },
     { trigger = { "<Leader>fh" }, action = "<cmd>Telescope help_tags<cr>" },
-    -- neo-tree
-    { trigger = { "<Leader>e" }, action = nt.filesystem },
-    { trigger = { "<Leader>b" }, action = nt.buffers },
+    -- neo-tree (explore ...)
+    { trigger = { "<Leader>ef" }, action = nt.filesystem },
+    { trigger = { "<Leader>eb" }, action = nt.buffers },
+    { trigger = { "<Leader>eg" }, action = nt.git_signs },
     -- zen-mode
     { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
     -- lightspeed
-    { trigger = { "s" }, action = "" },
-    { trigger = { "S" }, action = "" },
+    { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
+    { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
   }
 }
 

@@ -20,4 +20,8 @@ function helper.buffers()
   helper.toggle("buffers")
 end
 
+function helper.git_signs()
+  helper.toggle("git_signs")
+end
+
 return helper
