@@ -1,61 +1,71 @@
 local nt = require("fs.plugins.functions.neotree")
 
--- ============================================================================
---                       General
--- ============================================================================
-
--- Options for all keybindings
-local opts = { noremap = true, silent = true }
-
 -- Setup Space as Leader
-vim.keymap.set("n", "<SPACE>", "<Nop>")
-vim.g.mapleader = " "
+local function setupLeader()
+  vim.keymap.set("n", "<SPACE>", "<Nop>")
+  vim.g.mapleader = " "
+end
 
--- General
-vim.keymap.set("n", "<Leader>h", ":noh<CR>", opts)
+-- Function to set keybindings from table
+local function resolve(keybindingsTable)
+  local opts = { noremap = true, silent = true }
+  for mode, modeBindings in pairs(keybindingsTable) do
+    for _, binding in pairs(modeBindings) do
+      for _, trigger in pairs(binding.trigger) do
+        vim.keymap.set(mode, trigger, binding.action, opts)
+      end
+    end
+  end
+end
 
--- Buffer navigation
-vim.keymap.set("n", "<S-l>", ":bn<CR>", opts)
-vim.keymap.set("n", "<S-h>", ":bp<CR>", opts)
-vim.keymap.set("n", "<Leader>c", ":BDelete this<CR>", opts)
-vim.keymap.set("n", "<Leader>C", ":BDelete! this<CR>", opts)
+local generalBindings = {
+  n = {
+    -- Remove search highlight
+    { trigger = { "<Leader>h" }, action = ":noh<CR>" },
+    -- Buffer navigation
+    { trigger = { "<S-l>" }, action = ":bn<CR>" },
+    { trigger = { "<S-h>" }, action = ":bp<CR>" },
+    -- Move between open windows
+    { trigger = { "<c-h>" }, action = ":wincmd h<cr>" },
+    { trigger = { "<c-j>" }, action = ":wincmd j<cr>" },
+    { trigger = { "<c-k>" }, action = ":wincmd k<cr>" },
+    { trigger = { "<c-l>" }, action = ":wincmd l<cr>" },
+    -- Move lines around
+    { trigger = { "<A-j>", "º" }, action = ":m .+1<CR>==" },
+    { trigger = { "<A-k>", "∆" }, action = ":m .-2<CR>==" },
+  },
+  v = {
+    -- Moving lines
+    { trigger = { "<A-j>", "º" }, action = ":m '>+1<CR>gv=gv" },
+    { trigger = { "<A-k>", "∆" }, action = ":m '<-2<CR>gv=gv" },
+    -- Better indentation
+    { trigger = { "<" }, action = "<gv" },
+    { trigger = { ">" }, action = ">gv" },
+  }
+}
 
--- Finding stuff
-vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<Leader>fs", "<cmd>Telescope live_grep<cr>", opts)
-vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<cr>", opts)
-vim.keymap.set("n", "<Leader>ft", "<cmd>Telescope treesitter<cr>", opts)
-vim.keymap.set("n", "<Leader>fh", "<cmd>Telescope help_tags<cr>", opts)
+local pluginBindings = {
+  n = {
+    -- closebuffer
+    { trigger = { "<Leader>c" }, action = ":BDelete this<CR>" },
+    { trigger = { "<Leader>C" }, action = ":BDelete! this<CR>" },
+    -- telescope
+    { trigger = { "<Leader>ff" }, action = "<cmd>Telescope find_files<cr>" },
+    { trigger = { "<Leader>fs" }, action = "<cmd>Telescope live_grep<cr>" },
+    { trigger = { "<Leader>fb" }, action = "<cmd>Telescope buffers<cr>" },
+    { trigger = { "<Leader>ft" }, action = "<cmd>Telescope treesitter<cr>" },
+    { trigger = { "<Leader>fh" }, action = "<cmd>Telescope help_tags<cr>" },
+    -- neo-tree
+    { trigger = { "<Leader>e" }, action = nt.filesystem },
+    { trigger = { "<Leader>b" }, action = nt.buffers },
+    -- zen-mode
+    { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
+    -- lightspeed
+    { trigger = { "s" }, action = "" },
+    { trigger = { "S" }, action = "" },
+  }
+}
 
--- Window navigation
-vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", opts)
-vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", opts)
-vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", opts)
-vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", opts)
-
--- Move around lines
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", opts)
-vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
--- macOS specific bindings for alt+<letter> (because those produces some special character)
-vim.keymap.set("n", "º", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "∆", ":m .-2<CR>==", opts)
-vim.keymap.set("v", "º", ":m '>+1<CR>gv=gv", opts)
-vim.keymap.set("v", "∆", ":m '<-2<CR>gv=gv", opts)
-
--- Better indentation
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
-
--- ============================================================================
---                       Plugin related keybindings
--- ============================================================================
-
--- NeoTree
-vim.keymap.set("n", "<Leader>e", nt.filesystem, opts)
-vim.keymap.set("n", "<Leader>b", nt.buffers, opts)
-
--- ZenMode
-vim.keymap.set("n", "<Leader>z", ":ZenMode<CR>", opts)
-
+setupLeader()
+resolve(generalBindings)
+resolve(pluginBindings)
