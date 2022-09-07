@@ -1,5 +1,4 @@
 local nt = require("fs.plugins.functions.neotree")
-
 -- Setup Space as Leader
 local function setupLeader()
   vim.keymap.set("n", "<SPACE>", "<Nop>")
@@ -22,6 +21,8 @@ local generalBindings = {
   n = {
     -- Remove search highlight
     { trigger = { "<Leader>h" }, action = ":noh<CR>" },
+    -- Reload current buffer
+    { trigger = { "<Leader>R" }, action = ":e!<CR>" },
     -- Buffer navigation
     { trigger = { "<S-l>" }, action = ":bn<CR>" },
     { trigger = { "<S-h>" }, action = ":bp<CR>" },

@@ -22,8 +22,9 @@ nt.setup({
   buffers = {
     group_empty_dirs = true,
   },
-  file_system = {
+  filesystem = {
     hijack_netrw_behavior = "open_default",
+    group_empty_dirs = true,
   },
 })
 
