@@ -93,6 +93,12 @@ return require("packer").startup(function()
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- fast as fuck navigation
-    use 'ggandor/lightspeed.nvim'
+    -- use "ggandor/lightspeed.nvim"
+
+    -- Alternative to lightspeed
+    use {
+      "phaazon/hop.nvim",
+      branch = "v2", -- optional but strongly recommended
+    }
 
 end)

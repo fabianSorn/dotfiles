@@ -63,8 +63,15 @@ local pluginBindings = {
     -- zen-mode
     { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
     -- lightspeed
-    { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
-    { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
+    -- { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
+    -- { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
+    -- hop
+    { trigger = { "s", "S" }, action = ":HopWord<CR>" },
+    { trigger = { "f", "F" }, action = ":HopChar1<CR>" },
+    -- vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
+    -- vim.api.nvim_set_keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+    -- vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
+    -- vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
   }
 }
 
