@@ -7,8 +7,7 @@ end
 
 -- Function to set keybindings from table
 local function resolve(keybindingsTable)
-  local opts = { noremap = true, silent = true }
-  for mode, bindings in pairs(keybindingsTable) do
+  local opts = { noremap = true, silent = true } for mode, bindings in pairs(keybindingsTable) do
     for _, binding in pairs(bindings) do
       for _, trigger in pairs(binding.trigger) do
         vim.keymap.set(mode, trigger, binding.action, opts)
@@ -34,6 +33,9 @@ local generalBindings = {
     -- Move lines around
     { trigger = { "<A-j>", "º" }, action = ":m .+1<CR>==" },
     { trigger = { "<A-k>", "∆" }, action = ":m .-2<CR>==" },
+    -- Move many lines at once
+    { trigger = { "J" }, action = "10j" },
+    { trigger = { "K" }, action = "10k" },
   },
   v = {
     -- Moving lines
