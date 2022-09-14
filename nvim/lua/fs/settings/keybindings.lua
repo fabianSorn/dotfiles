@@ -1,4 +1,7 @@
 local nt = require("fs.plugins.functions.neotree")
+local hop = require("fs.plugins.functions.hop")
+local telescope = require("telescope.builtin")
+
 -- Setup Space as Leader
 local function setupLeader()
   vim.keymap.set("n", "<SPACE>", "<Nop>")
@@ -53,11 +56,14 @@ local pluginBindings = {
     { trigger = { "<Leader>c" }, action = ":BDelete this<CR>" },
     { trigger = { "<Leader>C" }, action = ":BDelete! this<CR>" },
     -- telescope (find ...)
-    { trigger = { "<Leader>ff" }, action = "<cmd>Telescope find_files<cr>" },
-    { trigger = { "<Leader>fb" }, action = "<cmd>Telescope buffers<cr>" },
-    { trigger = { "<Leader>fs" }, action = "<cmd>Telescope live_grep<cr>" },
-    { trigger = { "<Leader>ft" }, action = "<cmd>Telescope treesitter<cr>" },
-    { trigger = { "<Leader>fh" }, action = "<cmd>Telescope help_tags<cr>" },
+    { trigger = { "<Leader>ff" }, action = telescope.find_files },
+    { trigger = { "<Leader>fb" }, action = telescope.buffers },
+    { trigger = { "<Leader>fs" }, action = telescope.live_grep },
+    { trigger = { "<Leader>fS" }, action = telescope.current_buffer_fuzzy_find },
+    { trigger = { "<Leader>ft" }, action = telescope.treesitter },
+    { trigger = { "<Leader>fh" }, action = telescope.help_tags },
+    { trigger = { "<Leader>fr" }, action = telescope.resume },
+    { trigger = { "<Leader>fc" }, action = telescope.commands },
     -- neo-tree (explore ...)
     { trigger = { "<Leader>ef" }, action = nt.filesystem },
     { trigger = { "<Leader>eb" }, action = nt.buffers },
@@ -65,17 +71,18 @@ local pluginBindings = {
     -- zen-mode
     { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
     -- lightspeed
-    -- { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
-    -- { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
+      -- { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
+      -- { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
     -- hop
-    { trigger = { "s", "S" }, action = ":HopWord<CR>" },
-    { trigger = { "f", "F" }, action = ":HopChar1<CR>" },
-    -- vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-    -- vim.api.nvim_set_keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-    -- vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {})
-    -- vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", {})
+    { trigger = { "s" }, action = ":HopWord<CR>" },
+    { trigger = { "S" }, action = ":HopChar1<CR>" },
+    { trigger = { "f" }, action = hop.f },
+    { trigger = { "F" }, action = hop.F },
+    { trigger = { "t" }, action = hop.t },
+    { trigger = { "T" }, action = hop.T },
   }
 }
+
 
 setupLeader()
 resolve(generalBindings)

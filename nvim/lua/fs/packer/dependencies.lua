@@ -101,4 +101,10 @@ return require("packer").startup(function()
       branch = "v2", -- optional but strongly recommended
     }
 
+    -- LSP configurations
+    use "neovim/nvim-lspconfig"
+
+    -- Automatically installing language servers
+    use "williamboman/nvim-lsp-installer"
+
 end)

@@ -14,5 +14,5 @@ vim.opt.list = true                           -- Use list characters
 vim.opt.listchars = "tab:├─,space:∙"          -- Show tabs
 vim.opt.undofile = true                       -- Persists undo
 vim.opt.wrap = false                          -- No long line wrapping
-vim.wo.colorcolumn = "80,100,120"             -- Show a column at after 100 characters for visual reference of width
+vim.wo.colorcolumn = "80"                     -- Show a column at after 100 characters for visual reference of width
 vim.wo.number = true                          -- Enable absolute line numbers (at currently active line)
