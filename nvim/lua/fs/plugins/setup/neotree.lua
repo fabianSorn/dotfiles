@@ -14,7 +14,6 @@ nt.setup({
       },
     },
   window = {
-    position = screen.if_narrow("float", "left"),
     mappings = {
       ["o"] = "open",
     },

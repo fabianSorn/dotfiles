@@ -5,11 +5,13 @@ local helper = {}
 
 function helper.toggle(source)
   local position = screen.if_narrow("float", "left")
-  nt.execute({ action = "focus",
-    source = source,
+  nt.execute({ 
     position = position,
+    action = "focus",
+    source = source,
     toggle = true,
-    reveal = true })
+    reveal = true 
+  })
 end
 
 function helper.filesystem()
