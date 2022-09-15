@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/fsorn/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/fsorn/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/fsorn/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/fsorn/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/fsorn/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\FABIAN~1.SOR\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\FABIAN~1.SOR\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\FABIAN~1.SOR\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\FABIAN~1.SOR\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\FABIAN~1.SOR\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,130 +76,130 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["bufferline.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   ["close-buffers.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/close-buffers.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\close-buffers.nvim",
     url = "https://github.com/kazhala/close-buffers.nvim"
   },
   ["cmp-cmdline"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["hop.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["neo-tree.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig",
     wants = { "nvim-lsp-installer" }
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ripgrep = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/ripgrep",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ripgrep",
     url = "https://github.com/BurntSushi/ripgrep"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-fzf-native.nvim",
     url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
-    path = "/Users/fsorn/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    path = "C:\\Users\\Fabian.Sorn\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
   }
 }
