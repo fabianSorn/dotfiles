@@ -23,7 +23,9 @@ function module.in_linux()
 end
 
 function module.background()
-  if module.in_wsl() or module.in_windows() then
+  if module.in_wsl() then
+      return wsl_background()
+  elseif module.in_windows() then
       return win_background()
   elseif module.in_macos() then
       return mac_background()
@@ -33,6 +35,15 @@ function module.background()
 end
 
 function win_background()
+  local useLightTheme = vim.fn.system("powershell.exe -noprofile -nologo -noninteractive \"$a = Get-ItemProperty -Path HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize; $a.AppsUseLightTheme\"")
+  if string.match(useLightTheme, "0") then
+    return "dark"
+  else
+    return "light"
+  end
+end
+
+function wsl_background()
   local useLightTheme = vim.fn.system("powershell.exe -noprofile -nologo -noninteractive '$a = Get-ItemProperty -Path HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize; $a.AppsUseLightTheme'")
   if string.match(useLightTheme, "0") then
     return "dark"
