@@ -18,6 +18,7 @@ function module.in_macos()
   return vim.fn.has("macunix")
 end
 
+-- TODO: check if this works in linux
 function module.in_linux()
   return vim.fn.has("unix") and not module.in_wsl()
 end
@@ -29,10 +30,14 @@ function module.background()
       return win_background()
   elseif module.in_macos() then
       return mac_background()
+  elseif module.in_linux() then
+      return linux_background()
   else
     return "dark"
   end
 end
+
+-- ============================= Utility functions =============================
 
 function win_background()
   local useLightTheme = vim.fn.system("powershell.exe -noprofile -nologo -noninteractive \"$a = Get-ItemProperty -Path HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize; $a.AppsUseLightTheme\"")
@@ -59,6 +64,11 @@ function mac_background()
   else
     return "light"
   end
+end
+
+function linux_background()
+  -- TODO: implement? could be highly dependabel on desktop environment
+  return "dark"
 end
 
 return module
