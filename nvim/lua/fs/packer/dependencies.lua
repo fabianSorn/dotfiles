@@ -105,6 +105,6 @@ return require("packer").startup(function()
     use "neovim/nvim-lspconfig"
 
     -- Automatically installing language servers
-    use "williamboman/nvim-lsp-installer"
+    use "williamboman/mason.nvim"
 
 end)
