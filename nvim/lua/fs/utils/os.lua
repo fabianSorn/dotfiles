@@ -24,12 +24,12 @@ function module.in_linux()
 end
 
 function module.background()
-  if module.in_wsl() then
+  if module.in_macos() then
+      return mac_background()
+  elseif module.in_wsl() then
       return wsl_background()
   elseif module.in_windows() then
-      return win_background()
-  elseif module.in_macos() then
-      return mac_background()
+    return win_background()
   elseif module.in_linux() then
       return linux_background()
   else

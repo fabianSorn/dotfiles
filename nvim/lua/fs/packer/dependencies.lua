@@ -107,4 +107,7 @@ return require("packer").startup(function()
     -- Automatically installing language servers
     use "williamboman/mason.nvim"
 
+    -- Terminal window in neovim
+    use "akinsho/toggleterm.nvim"
+
 end)

@@ -80,7 +80,7 @@ local pluginBindings = {
     { trigger = { "F" }, action = hop.F },
     { trigger = { "t" }, action = hop.t },
     { trigger = { "T" }, action = hop.T },
-  }
+  },
 }
 
 
