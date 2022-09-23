@@ -74,13 +74,10 @@ local pluginBindings = {
       -- { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
       -- { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
     -- hop
-    { trigger = { "s" }, action = ":HopWord<CR>" },
-    { trigger = { "S" }, action = ":HopChar1<CR>" },
-    { trigger = { "f" }, action = hop.f },
-    { trigger = { "F" }, action = hop.F },
-    { trigger = { "t" }, action = hop.t },
-    { trigger = { "T" }, action = hop.T },
-  },
+    { trigger = { "<Leader>hw" }, action = ":HopWord<CR>" },
+    { trigger = { "<Leader>hc" }, action = ":HopChar1<CR>" },
+    { trigger = { "<Leader>hl" }, action = ":HopLine<CR>" },
+  }
 }
 
 

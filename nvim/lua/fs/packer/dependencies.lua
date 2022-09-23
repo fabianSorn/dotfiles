@@ -101,6 +101,9 @@ return require("packer").startup(function()
       branch = "v2", -- optional but strongly recommended
     }
 
+    -- Scollbar on the right side
+    use("petertriho/nvim-scrollbar")
+
     -- LSP configurations
     use "neovim/nvim-lspconfig"
 
