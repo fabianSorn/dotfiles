@@ -104,13 +104,13 @@ return require("packer").startup(function()
     -- Scollbar on the right side
     use("petertriho/nvim-scrollbar")
 
-    -- LSP configurations
-    use "neovim/nvim-lspconfig"
-
     -- Automatically installing language servers
     use "williamboman/mason.nvim"
 
     -- Terminal window in neovim
     use "akinsho/toggleterm.nvim"
+
+    -- Nicer text search
+    use "kevinhwang91/nvim-hlslens"
 
 end)

@@ -13,3 +13,5 @@ require("scrollbar").setup({
         Misc = { color = colors.purple },
     }
 })
+
+require("scrollbar.handlers.search").setup()

@@ -10,7 +10,8 @@ end
 
 -- Function to set keybindings from table
 local function resolve(keybindingsTable)
-  local opts = { noremap = true, silent = true } for mode, bindings in pairs(keybindingsTable) do
+  local opts = { noremap = true, silent = true } 
+  for mode, bindings in pairs(keybindingsTable) do
     for _, binding in pairs(bindings) do
       for _, trigger in pairs(binding.trigger) do
         vim.keymap.set(mode, trigger, binding.action, opts)
@@ -77,6 +78,13 @@ local pluginBindings = {
     { trigger = { "<Leader>hw" }, action = ":HopWord<CR>" },
     { trigger = { "<Leader>hc" }, action = ":HopChar1<CR>" },
     { trigger = { "<Leader>hl" }, action = ":HopLine<CR>" },
+    -- hlslens
+    { trigger = { "n" }, action = [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]] },
+    { trigger = { "N" }, action = [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]] },
+    { trigger = { "*" }, action = [[*<Cmd>lua require('hlslens').start()<CR>]] },
+    { trigger = { "#" }, action = [[#<Cmd>lua require('hlslens').start()<CR>]] },
+    { trigger = { "g*" }, action = [[g*<Cmd>lua require('hlslens').start()<CR>]] },
+    { trigger = { "g#" }, action = [[g#<Cmd>lua require('hlslens').start()<CR>]] },
   }
 }
 
