@@ -20,13 +20,13 @@ return require("packer").startup(function()
     }
 
     -- Nice status line at the bottom
-    use {
-      "nvim-lualine/lualine.nvim",
-      requires = { 
-        "kyazdani42/nvim-web-devicons", 
-        opt = true 
-      }
-    }
+    -- use {
+    --   "nvim-lualine/lualine.nvim",
+    --   requires = { 
+    --     "kyazdani42/nvim-web-devicons", 
+    --     opt = true 
+    --   }
+    -- }
 
     -- Collection of configurations for the built-in LSP client
     use {

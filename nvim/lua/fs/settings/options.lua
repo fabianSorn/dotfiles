@@ -15,5 +15,6 @@ vim.opt.listchars = "tab:├─,space:∙"           -- Show tabs
 vim.opt.undofile = true                        -- Persists undo
 vim.opt.wrap = false                           -- No long line wrapping
 vim.opt.guifont = { "Hack Nerd Font" }         -- No long line wrapping
+vim.opt.laststatus = 0                          -- Removes lower status lines since I don't look at it anyway...
 vim.wo.colorcolumn = "80"                      -- Show a column at after 100 characters for visual reference of width
 vim.wo.number = true                           -- Enable absolute line numbers (at currently active line)
