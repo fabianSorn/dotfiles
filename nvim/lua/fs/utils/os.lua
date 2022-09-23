@@ -1,7 +1,7 @@
 local module = { }
 
 function module.in_wsl()
-  if vim.fn.has("unix") then
+  if not vim.fn.has("unix") == 0 then
     local has_win_mount = string.find(vim.fn.system("echo %$PATH"), "/mnt/c/WINDOWS")
     if has_win_mount then
       return true
@@ -11,25 +11,25 @@ function module.in_wsl()
 end
 
 function module.in_windows()
-  return vim.fn.has("win64") or vim.fn.has("win32")
+  return not vim.fn.has("win64") == 0 or not vim.fn.has("win32") == 0
 end
 
 function module.in_macos()
-  return vim.fn.has("macunix")
+  return not vim.fn.has("macunix") == 0
 end
 
 -- TODO: check if this works in linux
 function module.in_linux()
-  return vim.fn.has("unix") and not module.in_wsl()
+  return not vim.fn.has("unix") == 0 and not module.in_wsl()
 end
 
 function module.background()
   if module.in_macos() then
       return mac_background()
+  elseif module.in_windows() then
+      return win_background()
   elseif module.in_wsl() then
       return wsl_background()
-  elseif module.in_windows() then
-    return win_background()
   elseif module.in_linux() then
       return linux_background()
   else
