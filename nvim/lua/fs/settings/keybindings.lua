@@ -71,9 +71,6 @@ local pluginBindings = {
     { trigger = { "<Leader>eg" }, action = nt.git_signs },
     -- zen-mode
     { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
-    -- lightspeed
-      -- { trigger = { "s" }, action = "<Plug>Lightspeed_omni_s" },
-      -- { trigger = { "S" }, action = "<Plug>Lightspeed_omni_s" },
     -- hop
     { trigger = { "<Leader>hw" }, action = ":HopWord<CR>" },
     { trigger = { "<Leader>hc" }, action = ":HopChar1<CR>" },
