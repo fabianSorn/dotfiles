@@ -72,9 +72,9 @@ local pluginBindings = {
     -- zen-mode
     { trigger = { "<Leader>z" }, action = ":ZenMode<CR>" },
     -- hop
-    { trigger = { "<Leader>hw" }, action = ":HopWord<CR>" },
-    { trigger = { "<Leader>hc" }, action = ":HopChar1<CR>" },
-    { trigger = { "<Leader>hl" }, action = ":HopLine<CR>" },
+    { trigger = { "hw" }, action = ":HopWord<CR>" },
+    { trigger = { "hc" }, action = ":HopChar1<CR>" },
+    { trigger = { "hl" }, action = ":HopLine<CR>" },
     -- hlslens
     { trigger = { "n" }, action = [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]] },
     { trigger = { "N" }, action = [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]] },
