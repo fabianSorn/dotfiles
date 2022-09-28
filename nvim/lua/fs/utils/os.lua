@@ -1,7 +1,16 @@
 local module = { }
 
+function is(flags)
+  for index, flag in pairs(flags) do
+    if vim.fn.has(flag) == 1 then
+      return true
+    end
+  end
+  return false
+end
+
 function module.in_wsl()
-  if not vim.fn.has("unix") == 0 then
+  if is({ "unix" }) then
     local has_win_mount = string.find(vim.fn.system("echo %$PATH"), "/mnt/c/WINDOWS")
     if has_win_mount then
       return true
@@ -11,16 +20,16 @@ function module.in_wsl()
 end
 
 function module.in_windows()
-  return not vim.fn.has("win64") == 0 or not vim.fn.has("win32") == 0
+  return is({"win64", "win32"})
 end
 
 function module.in_macos()
-  return not vim.fn.has("macunix") == 0
+  return is({"macunix"})
 end
 
 -- TODO: check if this works in linux
 function module.in_linux()
-  return not vim.fn.has("unix") == 0 and not module.in_wsl()
+  return is({"unix"}) and not module.in_wsl()
 end
 
 function module.background()
