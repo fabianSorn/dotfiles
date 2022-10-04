@@ -38,8 +38,8 @@ local generalBindings = {
     { trigger = { "<A-j>", "º" }, action = ":m .+1<CR>==" },
     { trigger = { "<A-k>", "∆" }, action = ":m .-2<CR>==" },
     -- Move many lines at once
-    { trigger = { "J" }, action = "10j" },
-    { trigger = { "K" }, action = "10k" },
+    { trigger = { "J" }, action = '<cmd>call smoothie#do("10j")<CR>' },
+    { trigger = { "K" }, action = '<cmd>call smoothie#do("10k")<CR>' },
   },
   v = {
     -- Moving lines

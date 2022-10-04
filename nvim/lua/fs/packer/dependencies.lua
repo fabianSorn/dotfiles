@@ -104,4 +104,7 @@ return require("packer").startup(function()
     -- Nicer text search
     use "kevinhwang91/nvim-hlslens"
 
+    -- Scroll to destination
+    use "psliwka/vim-smoothie"
+
 end)
