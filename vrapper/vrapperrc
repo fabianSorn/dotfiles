@@ -37,7 +37,6 @@ eclipseaction nextTab org.eclipse.ui.navigate.nextTab
 eclipseaction previousTab org.eclipse.ui.navigate.previousTab
 
 
-
 " =============================== Keybindings =================================
 
 " Find
@@ -62,6 +61,12 @@ nmap <space>lo :organizeImports<CR>
 nmap <space>lr :renameElement<CR>
 nmap <space>la :codeActions<CR>
 nmap <space>li :showInformation<CR>
+
+" Sneak plugin
+nmap s <Plug>(sneak_s)
+nmap S <Plug>(sneak_S)
+nmap ; <Plug>(sneak-next)
+nmap , <Plug>(sneak-prev)
 
 " Rest
 nmap <space>z :zenMode<CR>

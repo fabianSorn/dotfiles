@@ -6,7 +6,7 @@ ln -s $PWD/nvim ~/.config/
 
 # Vrapper (Vim eclipse plugin)
 rm -rf ~/.vrapperrc
-ln -s $PWD/vrapper/.vrapperrc ~/.vrapperrc
+ln -s $PWD/vrapper/vrapperrc ~/.vrapperrc
 
 # Tmux
 rm ~/.tmux.conf
