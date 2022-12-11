@@ -1,0 +1,46 @@
+" SETTINGS
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set scrolloff=4
+set autoindent
+set clipboard=unnamedplus
+
+set contentassistmode
+" :vim opens current file in nvim-qt
+" set gvimpath=C:\Users\Fabian.Sorn\scoop\apps\neovim\current\bin\nvim-qt.exe
+" set gvimargs={file} -- +{line}
+
+" ECLIPSE COMMANDS
+eclipseaction openType org.eclipse.jdt.ui.navigate.open.type
+eclipseaction searchAllFiles org.eclipse.search.ui.openSearchDialog
+eclipseaction findAllReferences org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace
+eclipseuiaction goToImplementation org.eclipse.jdt.ui.edit.text.java.open.implementation
+eclipseaction callHierachy org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy
+eclipseaction organizeImports org.eclipse.jdt.ui.edit.text.java.organize.imports
+eclipseaction renameElement org.eclipse.jdt.ui.edit.text.java.rename.element
+eclipseaction openResources org.eclipse.ui.navigate.openResource
+eclipseaction codeActions org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals
+eclipseuiaction showContextHelp org.eclipse.ui.edit.text.showInformation
+eclipseuiaction bufferQuickOutline org.eclipse.jdt.ui.edit.text.java.show.outline
+eclipseuiaction switchEditor org.eclipse.ui.window.openEditorDropDown
+eclipseaction saveBuffer org.eclipse.ui.file.save
+eclipseaction moveLineDown org.eclipse.ui.edit.text.moveLineDown
+eclipseaction moveLineUp org.eclipse.ui.edit.text.moveLineUp
+eclipseuiaction toggleMaximizeCurrentWindow org.eclipse.ui.window.maximizePart
+
+" map eclipse functions
+nmap <space>ft :bufferQuickOutline<CR>
+nmap <space>ff :openResources<CR>
+nmap <space>fs :searchAllFiles<CR>
+nmap <space>fb :switchEditor<CR>
+nmap <space>gr :findAllReferences<CR>
+nmap <space>gd :goToImplementation<CR>
+nmap <space>gc :callHierachy<CR>
+nmap <space>loa :organizeImports<CR>
+nmap <space>lr :renameElement<CR>
+
+nmap J 10j
+nmap K 10k
+
