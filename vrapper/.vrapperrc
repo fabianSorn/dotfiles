@@ -6,41 +6,83 @@ set incsearch
 set scrolloff=4
 set autoindent
 set clipboard=unnamedplus
-
 set contentassistmode
-" :vim opens current file in nvim-qt
-" set gvimpath=C:\Users\Fabian.Sorn\scoop\apps\neovim\current\bin\nvim-qt.exe
-" set gvimargs={file} -- +{line}
 
-" ECLIPSE COMMANDS
-eclipseaction openType org.eclipse.jdt.ui.navigate.open.type
-eclipseaction searchAllFiles org.eclipse.search.ui.openSearchDialog
-eclipseaction findAllReferences org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace
-eclipseuiaction goToImplementation org.eclipse.jdt.ui.edit.text.java.open.implementation
-eclipseaction callHierachy org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy
+" ============================== Eclipse Actions ==============================
+
+" Find actions
+eclipseuiaction findOutline org.eclipse.jdt.ui.edit.text.java.show.outline
+eclipseuiaction findBuffer org.eclipse.ui.window.openEditorDropDown
+eclipseaction findFile org.eclipse.ui.navigate.openResource
+eclipseaction findType org.eclipse.jdt.ui.navigate.open.type
+eclipseaction findString org.eclipse.search.ui.openSearchDialog
+
+" Jump to Actions
+eclipseuiaction jumpToImplementation org.eclipse.jdt.ui.edit.text.java.open.implementation
+eclipseaction jumpToReferences org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace
+eclipseaction jumpToCalls org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy
+eclipseaction jumpToTypes org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy
+
+" Language
 eclipseaction organizeImports org.eclipse.jdt.ui.edit.text.java.organize.imports
 eclipseaction renameElement org.eclipse.jdt.ui.edit.text.java.rename.element
-eclipseaction openResources org.eclipse.ui.navigate.openResource
 eclipseaction codeActions org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals
-eclipseuiaction showContextHelp org.eclipse.ui.edit.text.showInformation
-eclipseuiaction bufferQuickOutline org.eclipse.jdt.ui.edit.text.java.show.outline
-eclipseuiaction switchEditor org.eclipse.ui.window.openEditorDropDown
-eclipseaction saveBuffer org.eclipse.ui.file.save
+eclipseuiaction showInformation org.eclipse.ui.edit.text.showInformation
+
+" Navigation
+eclipseuiaction zenMode org.eclipse.ui.window.maximizePart
 eclipseaction moveLineDown org.eclipse.ui.edit.text.moveLineDown
 eclipseaction moveLineUp org.eclipse.ui.edit.text.moveLineUp
-eclipseuiaction toggleMaximizeCurrentWindow org.eclipse.ui.window.maximizePart
+eclipseaction nextTab org.eclipse.ui.navigate.nextTab
+eclipseaction previousTab org.eclipse.ui.navigate.previousTab
 
-" map eclipse functions
-nmap <space>ft :bufferQuickOutline<CR>
-nmap <space>ff :openResources<CR>
-nmap <space>fs :searchAllFiles<CR>
-nmap <space>fb :switchEditor<CR>
-nmap <space>gr :findAllReferences<CR>
-nmap <space>gd :goToImplementation<CR>
-nmap <space>gc :callHierachy<CR>
-nmap <space>loa :organizeImports<CR>
+
+
+" =============================== Keybindings =================================
+
+" Find
+nmap <space>fo :findOutline<CR>
+nmap <space>ff :findFile<CR>
+nmap <space>ft :findType<CR>
+nmap <space>fs :findString<CR>
+nmap <space>fb :findBuffer<CR>
+
+" Jump
+nmap <space>jr :jumpToReferences<CR>
+vmap <space>jr :jumpToReferences<CR>
+nmap <space>ji :jumpToImplementation<CR>
+vmap <space>ji :jumpToImplementation<CR>
+nmap <space>jc :jumpToCalls<CR>
+vmap <space>jc :jumpToCalls<CR>
+nmap <space>jt :jumpToTypes<CR>
+vmap <space>jt :jumpToTypes<CR>
+
+" Language
+nmap <space>lo :organizeImports<CR>
 nmap <space>lr :renameElement<CR>
+nmap <space>la :codeActions<CR>
+nmap <space>li :showInformation<CR>
 
+" Rest
+nmap <space>z :zenMode<CR>
+
+" Navigation
 nmap J 10j
+vmap J 10j
 nmap K 10k
+vmap K 10k
+nmap H :previousTab<CR>
+nmap L :nextTab<CR>
+
+nmap <space>c :q<CR>
+nmap <space>C :q!<CR>
+
+nmap <A-j> :moveLineDown<CR>
+vmap <A-j> :moveLineDown<CR>
+nmap º :moveLineDown<CR>
+vmap º :moveLineDown<CR>
+nmap <A-k> :moveLineUp<CR>
+vmap <A-k> :moveLineUp<CR>
+nmap ∆ :moveLineUp<CR>
+vmap ∆ :moveLineUp<CR>
 
