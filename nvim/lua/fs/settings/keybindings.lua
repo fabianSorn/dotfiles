@@ -61,7 +61,7 @@ local pluginBindings = {
     { trigger = { "<Leader>fb" }, action = telescope.buffers },
     { trigger = { "<Leader>fs" }, action = telescope.live_grep },
     { trigger = { "<Leader>fS" }, action = telescope.current_buffer_fuzzy_find },
-    { trigger = { "<Leader>ft" }, action = telescope.treesitter },
+    { trigger = { "<Leader>fo" }, action = telescope.treesitter },
     { trigger = { "<Leader>fh" }, action = telescope.help_tags },
     { trigger = { "<Leader>fr" }, action = telescope.resume },
     { trigger = { "<Leader>fc" }, action = telescope.commands },
