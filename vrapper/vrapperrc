@@ -70,6 +70,7 @@ nmap , <Plug>(sneak-prev)
 
 " Rest
 nmap <space>z :zenMode<CR>
+nmap <space>h :noh<CR>
 
 " Navigation
 nmap J 10j

@@ -1,6 +1,6 @@
 local screen = { }
 
-screen.small_screen =  140
+screen.small_screen =  160
 
 function screen.if_narrow(small_option, large_option)
   if vim.o.columns <= screen.small_screen then
