@@ -1,4 +1,13 @@
 {
+  // General
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.untrustedFiles": "open",
+  // Color theme handling
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Nord",
+  "workbench.preferredDarkColorTheme": "Nord",
+  "workbench.preferredLightColorTheme": "Nord Light",
+  // Vim Keybindings
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
@@ -7,23 +16,51 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["K"],
-      "after": ["1", "0", "k"]
-    },
-    {
       "before": ["J"],
       "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
     },
     {
       "before": ["L"],
       "commands": ["workbench.action.nextEditor"]
     },
     {
+      "before": ["Alt", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["Alt", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["º"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["∆"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
       "before": ["H"],
       "commands": ["workbench.action.previousEditor"]
     },
     {
-      "before": ["<leader>", "c", "f"],
+      "before": ["<leader>", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.addCommentLine"]
+    },
+    {
+      "before": ["<leader>", "c"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
@@ -37,6 +74,10 @@
     {
       "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "o"],
+      "commands": ["workbench.action.gotoSymbol"]
     },
     {
       "before": ["<leader>", "j", "r"],
@@ -57,6 +98,44 @@
     {
       "before": ["C-t"],
       "commands": ["workbench.action.terminal.focus"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.addCommentLine"]
+    },
+    {
+      "before": ["Alt", "j"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["Alt", "k"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["º"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["∆"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     }
   ]
 }
