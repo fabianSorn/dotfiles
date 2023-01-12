@@ -1,12 +1,36 @@
 {
   // General
-  "workbench.startupEditor": "none",
   "security.workspace.trust.untrustedFiles": "open",
+  "workbench.startupEditor": "none",
+  "window.commandCenter": true,
+  // Editor Settings
+  "editor.acceptSuggestionOnCommitCharacter": false,
   // Color theme handling
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Nord Light",
   "workbench.preferredDarkColorTheme": "Nord",
   "workbench.preferredLightColorTheme": "Nord Light",
+  // Integrated terminal settings
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  // Windows specific terminal settings
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+    }
+  },
   // Vim Keybindings
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -78,6 +102,10 @@
     {
       "before": ["<leader>", "f", "o"],
       "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.files.action.focusOpenEditorsView"]
     },
     {
       "before": ["<leader>", "j", "r"],
