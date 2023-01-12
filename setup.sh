@@ -23,7 +23,10 @@ setup () {
                 echo "✅ Removed old $STASH"
             } || echo "❌ Failed to remove stahed old file $STASH"
         fi
-    } || echo "❌ Failed to create link $PWD/$1 -> $2"
+    } || {
+        mv "$STASH" "$2"
+        echo "❌ Failed to create link, restored $2"
+    }
     
 }
 
