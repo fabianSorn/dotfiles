@@ -63,8 +63,8 @@ nmap <space>la :codeActions<CR>
 nmap <space>li :showInformation<CR>
 
 " Sneak plugin
-nmap s <Plug>(sneak_s)
-nmap S <Plug>(sneak_S)
+nmap <space><space>w <Plug>(sneak_s)
+nmap <space><space>W <Plug>(sneak_S)
 nmap ; <Plug>(sneak-next)
 nmap , <Plug>(sneak-prev)
 
