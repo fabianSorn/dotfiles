@@ -4,6 +4,7 @@
   "workbench.startupEditor": "none",
   "window.commandCenter": true,
   // Editor Settings
+  "editor.tabSize": 2,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.fontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
   // Color theme handling
