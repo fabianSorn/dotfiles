@@ -5,14 +5,16 @@
   "window.commandCenter": true,
   // Editor Settings
   "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.fontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
   // Color theme handling
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Nord Light",
+  "workbench.colorTheme": "Tokyo Night",
   "workbench.preferredDarkColorTheme": "Nord",
   "workbench.preferredLightColorTheme": "Nord Light",
   // Integrated terminal settings
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.fontFontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
   // Windows specific terminal settings
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
