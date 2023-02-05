@@ -1,5 +1,6 @@
 local wezterm = require "wezterm"
 
+-- Exceute command, parse the output and return it
 local function execute(command)
     local handle = io.popen(command)
     if handle ~= nil then
@@ -17,33 +18,21 @@ local function use_dark_win()
 end
 
 local function use_dark_macos()
-  local useLightTheme = execute("defaults read -g AppleInterfaceStyle")
-  return string.match(useLightTheme, ".*Dark.*")
+  local interfaceStyle = execute("defaults read -g AppleInterfaceStyle")
+  return string.match(interfaceStyle, ".*Dark.*")
 end
 
 local function use_dark()
     if wezterm.target_triple == ".*windows.*" then 
-        wezterm.log_info("Detected windows platform")
         return use_dark_win()
     elseif string.match(wezterm.target_triple, ".*apple.*") then
-        wezterm.log_info("Detected mac platform")
         return use_dark_macos()
     else
-        wezterm.log_info("Neither windows not mac")
         return true
     end
 end
 
--- Additional parts of the configuration
-
-local function color_scheme()
-    if use_dark() then
-        return "tokyonight-storm"
-    else
-        return "tokyonight-day"
-    end
-end
-
+-- Source for the colors: https://github.com/enkia/tokyo-night-vscode-theme#color-palette
 local tokyonight = {
   -- Dark colorway
   storm = {
