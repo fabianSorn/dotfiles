@@ -9,8 +9,8 @@
   // Color theme handling
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Tokyo Night",
-  "workbench.preferredDarkColorTheme": "Nord",
-  "workbench.preferredLightColorTheme": "Nord Light",
+  "workbench.preferredDarkColorTheme": "Tokyo Night",
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
   // Integrated terminal settings
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.persistentSessionReviveProcess": "never",
