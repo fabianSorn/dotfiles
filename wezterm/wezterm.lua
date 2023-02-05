@@ -38,17 +38,83 @@ end
 
 local function color_scheme()
     if use_dark() then
-        return "tokyonight"
+        return "tokyonight-storm"
     else
         return "tokyonight-day"
     end
 end
 
+local tokyonight = {
+  -- Dark colorway
+  storm = {
+    colors = {
+        tab_bar = {
+            background = "#24283b",
+            active_tab = {
+                bg_color = "#7aa2f7",
+                fg_color = "#24283b",
+                intensity = "Bold"
+            },
+            inactive_tab = {
+                bg_color = "#24283b",
+                fg_color = "#a9b1d6",
+            },
+            new_tab = {
+                bg_color = "#24283b",
+                fg_color = "#a9b1d6",
+            },
+            inactive_tab_hover = {
+                bg_color = "#414868",
+                fg_color = "#a9b1d6",
+            },
+            new_tab_hover = {
+                bg_color = "#414868",
+                fg_color = "#a9b1d6",
+            },
+        },
+    },
+  },
+  -- Light colorway
+  day = {
+    colors = {
+        tab_bar = {
+            background = "#d5d6db",
+            active_tab = {
+                bg_color = "#34548a",
+                fg_color = "#d5d6db",
+                intensity = "Bold"
+            },
+            inactive_tab = {
+                bg_color = "#d5d6db",
+                fg_color = "#343b58",
+            },
+            new_tab = {
+                bg_color = "#d5d6db",
+                fg_color = "#343b58",
+            },
+            inactive_tab_hover = {
+                bg_color = "#9699a3",
+                fg_color = "#343b58",
+            },
+            new_tab_hover = {
+                bg_color = "#9699a3",
+                fg_color = "#343b58",
+            },
+        },
+    },
+  }
+}
+
 return {
   font = wezterm.font "Hack Nerd Font Mono",
-  color_scheme = color_scheme(),
+  color_scheme = use_dark() and "TokyoNightStorm (Gogh)" or "TokyoNightLight (Gogh)",
+  use_fancy_tab_bar = false,
+  font_size = 14.0,
+  colors = use_dark() and tokyonight.storm.colors or tokyonight.day.colors ,
+  exit_behavior = "Close",
   keys = {
-    -- CTRL-SHIFT-l activates the debug overlay
-    { key = 'L', mods = 'CTRL', action = wezterm.action.ShowDebugOverlay },
+    -- CTRL-SHIFT-ö activates the debug overlay
+    -- wezterm.log_info() allows printing infos to that log
+    { key = "Ö", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
   },
 }
