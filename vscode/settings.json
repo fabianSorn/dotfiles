@@ -1,22 +1,26 @@
 {
-  // General
+  // general
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.startupEditor": "none",
   "window.commandCenter": true,
-  // Editor Settings
+  // editor Settings
   "editor.tabSize": 2,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.fontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-  // Color theme handling
+  // files settings
+  "files.hotExit": "off",
+  // window settings
   "window.autoDetectColorScheme": true,
+  "window.restoreWindows": "none",
+  // workbench settings
   "workbench.colorTheme": "Tokyo Night",
   "workbench.preferredDarkColorTheme": "Tokyo Night",
   "workbench.preferredLightColorTheme": "Tokyo Night Light",
-  // Integrated terminal settings
+  // integrated terminal settings
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.fontFontFamily": "Hack Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-  // Windows specific terminal settings
+  // windows specific terminal settings
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
