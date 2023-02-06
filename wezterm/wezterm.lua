@@ -84,6 +84,7 @@ return {
   font_size = 14.0,
   colors = use_dark() and tokyonight.storm.colors or tokyonight.day.colors ,
   exit_behavior = "Close",
+  window_close_confirmation = "NeverPrompt",
   keys = {
     -- CTRL-SHIFT-l activates the debug overlay
     -- wezterm.log_info() allows printing infos to that log
