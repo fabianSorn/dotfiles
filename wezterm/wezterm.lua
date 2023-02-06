@@ -4,6 +4,16 @@ local function use_dark()
   return wezterm.gui.get_appearance():match "Dark.*"
 end
 
+local function default_prog()
+    if wezterm.target_triple:match ".*windows.*" then
+        return { "C:/Program Files/Git/bin/bash.exe", "--login" }
+    elseif wezterm.target_triple:match ".*apple.*" then
+        return { "/usr/bin/zsh", "--login" }
+    else
+        return { "/usr/bin/bash", "--login" }
+    end
+end
+
 -- Source for the colors: https://github.com/enkia/tokyo-night-vscode-theme#color-palette
 local tokyonight = {
   -- Dark colorway
@@ -69,6 +79,7 @@ local tokyonight = {
 return {
   font = wezterm.font "Hack Nerd Font Mono",
   color_scheme = use_dark() and "TokyoNightStorm (Gogh)" or "TokyoNightLight (Gogh)",
+  default_prog = default_prog(),
   use_fancy_tab_bar = false,
   font_size = 14.0,
   colors = use_dark() and tokyonight.storm.colors or tokyonight.day.colors ,
