@@ -1,4 +1,4 @@
-require("nvim.lua.fs.settings.windows_options")
+require("fs.settings.windows_options")
 require("fs.settings.keybindings")
 require("fs.settings.options")
 require("fs.settings.colorscheme")
